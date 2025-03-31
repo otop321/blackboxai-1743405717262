@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uber Clone</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'uber-black': '#000000',
+                        'uber-white': '#FFFFFF',
+                        'uber-gray': '#EEEEEE',
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-inter">
+    <!-- Header/Navigation -->
+    <header class="fixed w-full bg-white z-50">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <!-- Logo -->
+            <div class="text-2xl font-bold">
+                <a href="#" class="text-uber-black">Uber</a>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex space-x-8">
+                <a href="#" class="hover:text-gray-600">Company</a>
+                <a href="#" class="hover:text-gray-600">Safety</a>
+                <a href="#" class="hover:text-gray-600">Help</a>
+                <a href="#" class="hover:text-gray-600">Products</a>
+            </div>
+
+            <!-- Login/Signup Buttons -->
+            <div class="hidden md:flex space-x-4">
+                <button class="px-4 py-2 hover:bg-gray-100 rounded-full">Log in</button>
+                <button class="px-4 py-2 bg-black text-white rounded-full hover:bg-gray-800">Sign up</button>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-2xl">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div class="md:hidden hidden bg-white">
+            <div class="px-4 py-2">
+                <a href="#" class="block py-2">Company</a>
+                <a href="#" class="block py-2">Safety</a>
+                <a href="#" class="block py-2">Help</a>
+                <a href="#" class="block py-2">Products</a>
+                <div class="py-4">
+                    <button class="w-full py-2 mb-2 hover:bg-gray-100 rounded-full">Log in</button>
+                    <button class="w-full py-2 bg-black text-white rounded-full hover:bg-gray-800">Sign up</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center bg-cover bg-center" style="background-image: url('https://images.pexels.com/photos/3764984/pexels-photo-3764984.jpeg?auto=compress&cs=tinysrgb&w=1920');">
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <div class="relative z-10 text-center text-white px-4">
+            <h1 class="text-5xl md:text-6xl font-bold mb-6">Get there with Uber</h1>
+            <p class="text-xl md:text-2xl mb-8">Request a ride, hop in, and go.</p>
+            <div class="flex flex-col md:flex-row justify-center gap-4">
+                <button class="px-8 py-4 bg-white text-black rounded-full hover:bg-gray-100 font-semibold">
+                    <i class="fas fa-car mr-2"></i>Request a ride
+                </button>
+                <button class="px-8 py-4 bg-white text-black rounded-full hover:bg-gray-100 font-semibold">
+                    <i class="fas fa-utensils mr-2"></i>Order food
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-16">Why ride with Uber?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <!-- Feature 1 -->
+                <div class="text-center">
+                    <div class="text-4xl mb-6">
+                        <i class="fas fa-clock text-uber-black"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4">Fast pickup</h3>
+                    <p class="text-gray-600">Request a ride and get picked up within minutes, even at night.</p>
+                </div>
+                <!-- Feature 2 -->
+                <div class="text-center">
+                    <div class="text-4xl mb-6">
+                        <i class="fas fa-shield-alt text-uber-black"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4">Safe travels</h3>
+                    <p class="text-gray-600">Safety features protect you and your loved ones during every ride.</p>
+                </div>
+                <!-- Feature 3 -->
+                <div class="text-center">
+                    <div class="text-4xl mb-6">
+                        <i class="fas fa-map-marker-alt text-uber-black"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4">Go anywhere</h3>
+                    <p class="text-gray-600">Reliable rides to any destination, whenever you need it.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Section -->
+    <section class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-4xl font-bold mb-6">Uber for Business</h2>
+                    <p class="text-xl text-gray-600 mb-8">Transform the way your company moves and feeds its people.</p>
+                    <button class="px-8 py-4 bg-black text-white rounded-full hover:bg-gray-800 font-semibold">
+                        See how
+                    </button>
+                </div>
+                <div class="rounded-lg overflow-hidden">
+                    <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+                         alt="Business people in meeting" 
+                         class="w-full h-auto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Safety Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="order-2 md:order-1">
+                    <img src="https://images.pexels.com/photos/7176026/pexels-photo-7176026.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+                         alt="Safety features illustration" 
+                         class="w-full h-auto rounded-lg">
+                </div>
+                <div class="order-1 md:order-2">
+                    <h2 class="text-4xl font-bold mb-6">Your safety matters</h2>
+                    <p class="text-xl text-gray-600 mb-8">Peace of mind, every time you ride.</p>
+                    <button class="px-8 py-4 bg-black text-white rounded-full hover:bg-gray-800 font-semibold">
+                        Learn more
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download App Section -->
+    <section class="py-20 bg-black text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-8">Download the Uber app</h2>
+            <p class="text-xl mb-12">Get a ride at your fingertips</p>
+            <div class="flex flex-col md:flex-row justify-center gap-4">
+                <button class="px-8 py-4 bg-white text-black rounded-full hover:bg-gray-100 font-semibold">
+                    <i class="fab fa-apple mr-2"></i>App Store
+                </button>
+                <button class="px-8 py-4 bg-white text-black rounded-full hover:bg-gray-100 font-semibold">
+                    <i class="fab fa-google-play mr-2"></i>Google Play
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-20">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+                <!-- Company Info -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-6">Uber</h3>
+                    <p class="text-gray-400">Visit Help Center</p>
+                </div>
+                <!-- Products -->
+                <div>
+                    <h4 class="font-semibold mb-4">Products</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Ride</a></li>
+                        <li><a href="#" class="hover:text-white">Drive</a></li>
+                        <li><a href="#" class="hover:text-white">Deliver</a></li>
+                        <li><a href="#" class="hover:text-white">Eat</a></li>
+                    </ul>
+                </div>
+                <!-- Global citizenship -->
+                <div>
+                    <h4 class="font-semibold mb-4">Global citizenship</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Safety</a></li>
+                        <li><a href="#" class="hover:text-white">Diversity and Inclusion</a></li>
+                    </ul>
+                </div>
+                <!-- Travel -->
+                <div>
+                    <h4 class="font-semibold mb-4">Travel</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Airports</a></li>
+                        <li><a href="#" class="hover:text-white">Cities</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Social Media Links -->
+            <div class="mt-12 pt-8 border-t border-gray-800">
+                <div class="flex justify-between items-center">
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                    <div class="text-gray-400">
+                        © 2024 Uber Clone
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.querySelector('.fa-bars').parentElement;
+        const mobileMenu = document.querySelector('.md\\:hidden.hidden');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!mobileMenuButton.contains(e.target) && !mobileMenu.contains(e.target)) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
+</create_file>
+
+Now that I've created the main HTML file with all the necessary sections, let me start a local server to view the result:
+
+<execute_command>
+<command>python3 -m http.server 8000</command>
+</execute_command>
